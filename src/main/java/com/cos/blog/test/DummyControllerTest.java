@@ -38,7 +38,7 @@ public class DummyControllerTest {
 		List<User>users = pagingUsers.getContent();
 		return users;
 	}
-	//
+	////
 /*	
 	//{id}주소로 파라미터를 전달 받을 수 있다.
 	//http://localhost:8000/blog/dummy/user/3
