@@ -36,7 +36,7 @@ public class BoardApiController {
 		boardService.deleteWrite(id);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
-	
+	 
 	@PutMapping("api/board/{id}")
 	public ResponseDto<Integer> update(@PathVariable int id, @RequestBody Board board){
 		System.out.println("BoardApiController:update호출됨");
