@@ -43,4 +43,4 @@ public class BoardController {
 		model.addAttribute("board", boardService.lookWrite(id));
 		return "board/updateForm";
 	}
-}
+} 
