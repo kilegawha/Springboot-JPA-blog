@@ -9,9 +9,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.cos.blog.model.User;
 
 import lombok.Data;
+import lombok.Getter;
 
 //스프링 시큐리티가 로그인 요청을 가로채서 로그인을 진행하고 완료가 되면 UserDetails 타입의 오브젝트를
 //스프링 시큐리티의 고유한 세션저장소에 저장을 해준다.
+@Getter
 public class PrincipalDetail implements UserDetails{
 	private User user; //콤포지선
 
@@ -53,8 +55,8 @@ public class PrincipalDetail implements UserDetails{
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
 		Collection<GrantedAuthority>collectors = new ArrayList<GrantedAuthority>();			
-		collectors.add(() -> {return "ROLE_"+user.getRole();});
-		
+		collectors.add(() -> {return "ROLE_"+user.getRole();});  
+		//"ROLE_"를 꼭 같이 붙여서 리턴해야한다. 아니면 인식을 못한다.		
 		return collectors;
 	}
 
